@@ -1,4 +1,4 @@
-const API_BASE = "https://triptales-rvym.onrender.com/api";
+const API_BASE = "https://triptales-rvym.onrender.com";
 
 
 const getToken = () => localStorage.getItem('tt_token') || '';
