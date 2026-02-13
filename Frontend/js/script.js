@@ -1,4 +1,4 @@
-const API_BASE = 'http://127.0.0.1:8000/api';
+const API_BASE = 'https://triptales-rvym.onrender.com';
 
 const getToken = () => localStorage.getItem('tt_token') || '';
 const setToken = (token) => localStorage.setItem('tt_token', token);
