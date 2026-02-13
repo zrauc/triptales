@@ -15,6 +15,10 @@ from pydantic import BaseModel, Field
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "triptales.db"
 
+@app.get("/")
+def root():
+    return {"message": "TripTales API is running"}
+
 app = FastAPI(title="TripTales API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
