@@ -97,7 +97,7 @@ const initThemeToggle = () => {
 const performSignOut = async () => {
   try {
     if (hasSession()) {
-      await apiFetch('/auth/logout', { method: 'POST' });
+      await apiFetch('/api/auth/logout', { method: 'POST' });
     }
   } catch {
     // no-op
@@ -379,7 +379,7 @@ const initExplorePage = () => {
       const params = new URLSearchParams();
       if (search.value.trim()) params.set('q', search.value.trim());
       if (region.value) params.set('region', region.value);
-      const data = await apiFetch(`/itineraries?${params.toString()}`);
+      const data = await apiFetch(`/api/itineraries?${params.toString()}`);
       if (currentRequest !== requestId) return;
 
       if (!data.items.length) {
@@ -453,7 +453,7 @@ const initAuthForms = () => {
     loginMsg.textContent = 'Logging in...';
     loginBtn.disabled = true;
     try {
-      const data = await apiFetch('/auth/login', {
+      const data = await apiFetch('/api/auth/login', {
         method: 'POST',
         body: JSON.stringify({
           email: document.getElementById('login-email').value.trim(),
@@ -477,7 +477,7 @@ const initAuthForms = () => {
     registerMsg.textContent = 'Creating account...';
     registerBtn.disabled = true;
     try {
-      await apiFetch('/auth/register', {
+      await apiFetch('/api/auth/register', {
         method: 'POST',
         body: JSON.stringify({
           name: document.getElementById('register-name').value.trim(),
@@ -570,12 +570,12 @@ const initAdminPage = () => {
   });
 
   const loadMine = async () => {
-    const data = await apiFetch('/itineraries?mine=true');
+    const data = await apiFetch('/api/itineraries?mine=true');
     renderMine(data.items);
   };
 
   const loadReview = async () => {
-    const data = await apiFetch('/itineraries?status=pending');
+    const data = await apiFetch('/api/itineraries?status=pending');
     renderReview(data.items);
   };
 
@@ -586,7 +586,7 @@ const initAdminPage = () => {
     }
 
     try {
-      const me = await apiFetch('/auth/me');
+      const me = await apiFetch('/api/auth/me');
       setUser(me);
       sessionInfo.textContent = `Signed in as ${me.name} (${me.role})`;
       await loadMine();
@@ -606,7 +606,7 @@ const initAdminPage = () => {
     event.preventDefault();
     msg.textContent = 'Submitting itinerary...';
     try {
-      await apiFetch('/itineraries', {
+      await apiFetch('/api/itineraries', {
         method: 'POST',
         body: JSON.stringify(payloadFromForm()),
       });
@@ -628,7 +628,7 @@ const initAdminPage = () => {
       const id = delBtn.dataset.deleteId;
       if (!confirm('Delete this itinerary?')) return;
       try {
-        await apiFetch(`/itineraries/${id}`, { method: 'DELETE' });
+        await apiFetch(`/api/itineraries/${id}`, { method: 'DELETE' });
         msg.textContent = 'Deleted.';
         await loadMine();
       } catch (err) {
@@ -641,10 +641,10 @@ const initAdminPage = () => {
       const title = prompt('New title:');
       if (!title) return;
       try {
-        const mine = await apiFetch('/itineraries?mine=true');
+        const mine = await apiFetch('/api/itineraries?mine=true');
         const item = mine.items.find((x) => String(x.id) === String(id));
         if (!item) throw new Error('Itinerary not found');
-        await apiFetch(`/itineraries/${id}`, {
+        await apiFetch(`/api/itineraries/${id}`, {
           method: 'PUT',
           body: JSON.stringify({ ...item, title }),
         });
@@ -664,7 +664,7 @@ const initAdminPage = () => {
 
     const status = approve ? 'approved' : 'rejected';
     try {
-      await apiFetch(`/itineraries/${id}/status`, {
+      await apiFetch(`/api/itineraries/${id}/status`, {
         method: 'PATCH',
         body: JSON.stringify({ status }),
       });
