@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TripTales | About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-white/40 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:flex-nowrap">
+      <a class="flex items-center gap-3" href="index.html">
+        <img src="../images/logo.png" alt="TripTales logo" class="h-9 w-9 sm:h-11 sm:w-11" />
+        <div>
+          <div class="display-font text-lg font-semibold text-slate-900">TripTales</div>
+          <small class="text-slate-500">Plan smarter. Travel better.</small>
+        </div>
+      </a>
+      <nav class="nav-links flex w-full flex-wrap items-center gap-3 text-xs font-semibold text-slate-700 sm:w-auto sm:flex-nowrap sm:gap-5 sm:text-sm sm:justify-end">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+        <a class="nav-link" href="login.html">Login</a>
+        <button id="theme-toggle" type="button" class="nav-link theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">&#127769;</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="py-16">
+    <div class="mx-auto w-full max-w-6xl px-4">
+      <section class="fade-up rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60 lg:p-10">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">About TripTales</p>
+        <h1 class="display-font mt-3 text-4xl text-slate-900">A planning platform for complete Jammu and Kashmir journeys</h1>
+        <p class="mt-5 max-w-4xl text-base leading-8 text-slate-600">
+          TripTales is a travel planning platform designed around complete itineraries rather than isolated destination tips.
+          It helps users evaluate journeys as connected plans with realistic time flow, practical routing, and budget clarity.
+          The product focus is straightforward: improve decision quality for travelers planning in Jammu and Kashmir.
+        </p>
+      </section>
+
+      <section class="fade-up mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60 lg:p-10">
+        <h2 class="display-font text-3xl text-slate-900">The Problem We Identified</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <article class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Fragmented travel information</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              Travelers often rely on disconnected resources that do not fit together into a practical route, which increases planning uncertainty and rework.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Unrealistic influencer plans</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              Highly visual itineraries may look attractive but frequently omit timing constraints, true costs, and logistics needed for real execution.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Lack of complete itineraries</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              Many platforms optimize around place-level content, leaving users to manually construct end-to-end journeys without enough structural guidance.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="fade-up mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60 lg:p-10">
+        <h2 class="display-font text-3xl text-slate-900">Our Approach</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <article class="rounded-2xl border border-slate-200 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Itinerary-first design</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              Every entry is structured as a complete plan so users can assess sequence, duration, and trip logic before making commitments.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Budget transparency</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              Cost ranges are shown clearly to support realistic filtering and to align traveler expectations with practical financial constraints.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Community ratings</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              User feedback contributes practical quality signals so plans can be evaluated by reliability, not only by popularity.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Admin moderation and regional focus</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">
+              Moderation improves consistency while the Jammu and Kashmir focus enables deeper context and stronger planning relevance.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="fade-up mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60 lg:p-10">
+        <h2 class="display-font text-3xl text-slate-900">How We Are Different</h2>
+        <p class="mt-4 text-sm leading-7 text-slate-600">
+          Large travel portals such as TripAdvisor are valuable for place-level discovery and reviews. TripTales addresses a different planning layer:
+          journey-level decision making. Instead of reviewing places one by one, users can evaluate complete multi-day routes with coherent structure.
+        </p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-50 text-slate-700">
+              <tr>
+                <th class="px-5 py-3 font-semibold">Planning Dimension</th>
+                <th class="px-5 py-3 font-semibold">TripTales</th>
+                <th class="px-5 py-3 font-semibold">Large review platforms</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-600">
+              <tr class="border-t border-slate-200">
+                <td class="px-5 py-4 font-semibold text-slate-800">Primary format</td>
+                <td class="px-5 py-4">Complete itinerary</td>
+                <td class="px-5 py-4">Single destination review</td>
+              </tr>
+              <tr class="border-t border-slate-200 bg-slate-50/50">
+                <td class="px-5 py-4 font-semibold text-slate-800">Planning depth</td>
+                <td class="px-5 py-4">Day-wise sequencing and budget range</td>
+                <td class="px-5 py-4">Point recommendations and ratings</td>
+              </tr>
+              <tr class="border-t border-slate-200">
+                <td class="px-5 py-4 font-semibold text-slate-800">Regional model</td>
+                <td class="px-5 py-4">Focused depth in Jammu and Kashmir</td>
+                <td class="px-5 py-4">Broad global scope</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="fade-up mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60 lg:p-10">
+        <h2 class="display-font text-3xl text-slate-900">Our Vision</h2>
+        <p class="mt-5 text-base leading-8 text-slate-600">
+          TripTales is being shaped as a scalable planning ecosystem where structured itineraries become the foundation of smarter travel outcomes.
+          The long-term direction is to strengthen planning precision, improve comparative decision support, and extend the model to broader route intelligence
+          while maintaining high reliability and regional quality.
+        </p>
+      </section>
+
+      <section class="fade-up mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/60 lg:p-10">
+        <h2 class="display-font text-3xl text-slate-900">Built By</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 px-5 py-4 text-center text-base font-semibold text-slate-800">Aftab Ahmed</div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 px-5 py-4 text-center text-base font-semibold text-slate-800">Atif Bashir</div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 px-5 py-4 text-center text-base font-semibold text-slate-800">Ishraq Shakeel</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+    &copy; 2026 TripTales. All rights reserved. | Promoting authentic J&K tourism.
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TripTales | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-white/40 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:flex-nowrap">
+      <a class="flex items-center gap-3" href="index.html">
+        <img src="../images/logo.png" alt="TripTales logo" class="h-9 w-9 sm:h-11 sm:w-11" />
+        <div>
+          <div class="display-font text-lg font-semibold text-slate-900">TripTales</div>
+          <small class="text-slate-500">Plan smarter. Travel better.</small>
+        </div>
+      </a>
+      <nav class="nav-links flex w-full flex-wrap items-center gap-3 text-xs font-semibold text-slate-700 sm:w-auto sm:flex-nowrap sm:gap-5 sm:text-sm sm:justify-end">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+        <a class="nav-link" href="login.html">Login</a>
+        <button id="theme-toggle" type="button" class="nav-link theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="py-16">
+    <div class="mx-auto w-full max-w-6xl space-y-8 px-4">
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h1 class="display-font text-3xl text-slate-900">User Dashboard</h1>
+            <p id="session-info" class="mt-2 text-slate-500">Please login first.</p>
+          </div>
+          <button id="logout-btn" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700">Logout</button>
+        </div>
+        <p id="admin-msg" class="mt-4 text-sm text-slate-500"></p>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
+        <h2 class="display-font text-2xl text-slate-900">Create Itinerary</h2>
+        <form id="itinerary-form" class="mt-5 grid gap-4 md:grid-cols-2">
+          <input id="it-title" required placeholder="Title" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" />
+          <input id="it-region" required placeholder="Region (Kashmir/Jammu)" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" />
+          <input id="it-duration" required type="number" min="1" max="30" placeholder="Duration (days)" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" />
+          <input id="it-image" required placeholder="Image URL" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" />
+          <input id="it-budget-min" required type="number" min="0" placeholder="Budget min" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" />
+          <input id="it-budget-max" required type="number" min="0" placeholder="Budget max" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" />
+          <textarea id="it-details" required placeholder="Details" class="md:col-span-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:outline-none" rows="4"></textarea>
+          <button type="submit" class="md:col-span-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white">Submit Itinerary</button>
+        </form>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
+        <h2 class="display-font text-2xl text-slate-900">My Itineraries</h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[700px] text-left text-sm text-slate-700">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs uppercase text-slate-500">
+                <th class="px-2 py-3">Title</th>
+                <th class="px-2 py-3">Region</th>
+                <th class="px-2 py-3">Status</th>
+                <th class="px-2 py-3">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="my-itineraries-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="admin-review-section" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70 hidden">
+        <h2 class="display-font text-2xl text-slate-900">Admin Review</h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[700px] text-left text-sm text-slate-700">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs uppercase text-slate-500">
+                <th class="px-2 py-3">Itinerary</th>
+                <th class="px-2 py-3">By</th>
+                <th class="px-2 py-3">Status</th>
+                <th class="px-2 py-3">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="review-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+    &copy; 2026 TripTales. All rights reserved. | Promoting authentic J&K tourism.
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
