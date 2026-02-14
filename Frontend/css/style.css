@@ -162,7 +162,7 @@ button:disabled {
 }
 
 .hero-section {
-  background-image: url("../images/kashmir-valley.jpg");
+  background-image: url("images/kashmir-valley.jpg");
   background-size: cover;
   background-position: center;
 }
